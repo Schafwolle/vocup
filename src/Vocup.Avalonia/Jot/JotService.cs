@@ -20,7 +20,7 @@ namespace Vocup.Avalonia.Jot
                 .Id(f => f.Name)
                 .Properties(f => new { f.Width, f.Height, f.Position, f.WindowState })
                 .PersistOn(nameof(Window.Closing))
-                //.WhenPersistingProperty((f, p) => p.Cancel = (f.WindowState != WindowState.Normal && (p.Property == nameof(Form.Height) || p.Property == nameof(Form.Width) || p.Property == nameof(Form.Top) || p.Property == nameof(Form.Left))))
+                .WhenPersistingProperty((f, p) => p.Cancel = (f.WindowState != WindowState.Normal && (p.Property == nameof(f.Height) || p.Property == nameof(f.Width) || p.Property == nameof(f.Position))))
                 .StopTrackingOn(nameof(Window.Closed));
         }
     }
